@@ -1,3 +1,4 @@
+import './style.css';
 import {format} from 'date-fns';
 
 const today = new Date("2023-09-09");
