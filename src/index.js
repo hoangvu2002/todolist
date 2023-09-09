@@ -18,5 +18,10 @@ modal();
 const task = create('sdf','asfes', new Date('2023-09-09'), 'urgent');
 console.log(task);
 
+const tasks = [];
+
 const addTask = document.querySelector('form button');
-addTask.onClick = () => {create}
+addTask.onClick = () => {
+    const task = create(title.value, description.value, dueDate.value, priority.value, notes.value);
+    tasks.push(task); 
+}
