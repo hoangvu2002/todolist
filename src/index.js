@@ -2,6 +2,7 @@ import './style.css';
 import {format} from 'date-fns';
 import modal from './modal';
 import create from './create';
+export const tasks = [];
 
 const title = document.getElementById('title');
 const description = document.getElementById('description');
@@ -18,7 +19,7 @@ modal();
 const task = create('sdf','asfes', new Date('2023-09-09'), 'urgent');
 console.log(task);
 
-const tasks = [];
+
 
 const addTask = document.querySelector('form button');
 addTask.onClick = () => {
