@@ -6,11 +6,17 @@ module.exports = {
         index: './src/index.js',
         modal: './src/modal.js',
       },
-  devtool: 'inline-source-map',
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+      devtool: 'inline-source-map',
+      plugins: [
+        new HtmlWebpackPlugin({
+          title: 'Development',
+        }),
+      ],
+      output: {
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
+      },
  module: {
    rules: [
      {
