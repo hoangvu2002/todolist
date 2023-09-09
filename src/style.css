@@ -1,6 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
 .content {
     display: grid;
     grid-template-rows: 100px 1fr 100px;
     grid-template-columns: 1fr 4fr;
+    height: 100%;
 }
 
+.heading {
+    grid-column: 1 / 3;
+}
+
+.nav-bar {
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.task-display {
+    grid-column: 2 / 3;
+    background-color: aqua;
+}
+
+.footer {
+    grid-column: 1 / 3;
+    background-color: black;
+    color: white;
+}
