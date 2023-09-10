@@ -4,7 +4,22 @@ import create from "./create";
 import { tasks } from "./index";
 import storeData from "./storeData";
 
+// Function to load tasks from local storage
+function loadTasksFromLocalStorage() {
+    const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (storedTasks) {
+        // If there are tasks in local storage, replace the tasks array with the stored tasks
+        tasks.length = 0; // Clear the existing tasks array
+        tasks.push(...storedTasks); // Push the stored tasks into the array
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Load tasks from local storage when the page loads
+    loadTasksFromLocalStorage();
+
     const form = document.getElementById('task-form');
 
     form.addEventListener('submit', (event) => {
