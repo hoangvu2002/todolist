@@ -12,16 +12,19 @@ export default function displayTask() {
         const taskTitle = document.createElement('p');
         const taskDescription = document.createElement('p');
         const taskDue = document.createElement('p');
+        const taskNotes = document.createElement('p');
         const deleteButton = document.createElement('button');
         
         //
         taskDiv.appendChild(taskTitle);
         taskDiv.appendChild(taskDescription);
         taskDiv.appendChild(taskDue);
+        taskDiv.appendChild(taskNotes);
         taskDiv.appendChild(deleteButton);
         taskTitle.textContent = task.title;
         taskDescription.textContent = task.desc;
         taskDue.textContent = task.due;
+        taskNotes.textContent = task.notes;
         taskDisplay.appendChild(taskDiv);
         taskTitle.style.color = displayColor(task);
         const index = getIndex(task, tasks);
