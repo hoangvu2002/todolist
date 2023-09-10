@@ -3,6 +3,7 @@
 import create from "./create";
 import { tasks } from "./index";
 import storeData from "./storeData";
+import displayTask from "./displayTask";
 
 // Function to load tasks from local storage
 function loadTasksFromLocalStorage() {
@@ -36,5 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const task = create(title, description, dueDate, priority, notes);
         tasks.push(task); 
         storeData();
+        displayTask(); //Display the projects
     });
 });

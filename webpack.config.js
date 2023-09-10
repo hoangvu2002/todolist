@@ -10,6 +10,7 @@ module.exports = {
         storeData: './src/storeData.js',
         formSubmit: './src/formSubmit.js',
         deleteTask: './src/deleteTask.js',
+        displayTask: './src/displayTask.js',
     },
     devtool: 'inline-source-map',
     plugins: [
