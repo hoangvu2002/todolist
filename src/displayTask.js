@@ -1,4 +1,6 @@
 import { tasks } from "./index";
+import getIndex from "./getIndex";
+import deleteTask from "./deleteTask";
 
 export default function displayTask() {
     const taskDisplay = document.querySelector('.task-display');
@@ -10,16 +12,24 @@ export default function displayTask() {
         const taskTitle = document.createElement('p');
         const taskDescription = document.createElement('p');
         const taskDue = document.createElement('p');
+        const deleteButton = document.createElement('button');
         
         //
         taskDiv.appendChild(taskTitle);
         taskDiv.appendChild(taskDescription);
         taskDiv.appendChild(taskDue);
+        taskDiv.appendChild(deleteButton);
         taskTitle.textContent = task.title;
         taskDescription.textContent = task.desc;
         taskDue.textContent = task.due;
         taskDisplay.appendChild(taskDiv);
         taskTitle.style.color = displayColor(task);
+        const index = getIndex(task, tasks);
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => {
+            deleteTask(index);
+            taskDisplay.removeChild(taskDiv);
+        })
     }
 }
 

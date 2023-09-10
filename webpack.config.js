@@ -11,6 +11,7 @@ module.exports = {
         formSubmit: './src/formSubmit.js',
         deleteTask: './src/deleteTask.js',
         displayTask: './src/displayTask.js',
+        deleteTask: './src/deleteTask.js',
     },
     devtool: 'inline-source-map',
     plugins: [
