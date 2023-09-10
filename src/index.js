@@ -2,6 +2,7 @@ import './style.css';
 import {format} from 'date-fns';
 import modal from './modal';
 import create from './create';
+import storeData from './storeData';
 export const tasks = [];
 
 const title = document.getElementById('title');
@@ -16,13 +17,11 @@ console.log(format(today, 'yyyy-MM-dd'));
 
 modal();
 
-const task = create('sdf','asfes', new Date('2023-09-09'), 'urgent');
-console.log(task);
-
-
-
-const addTask = document.querySelector('form button');
-addTask.onClick = () => {
-    const task = create(title.value, description.value, dueDate.value, priority.value, notes.value);
-    tasks.push(task); 
-}
+//const addTask = document.getElementsByClassName('submit')[0];
+//addTask.addEventListener('click', (event) => {
+//    event.stopPropagation(); // prevent propagation 
+//    console.log('submit');
+//    const task = create(title.value, description.value, dueDate.value, priority.value, notes.value);
+//    tasks.push(task); 
+//    storeData();
+//});

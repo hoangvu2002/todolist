@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todolist</title>
-<script defer src="index.bundle.js"></script><script defer src="modal.bundle.js"></script><script defer src="create.bundle.js"></script></head>
+<script defer src="index.bundle.js"></script><script defer src="modal.bundle.js"></script><script defer src="create.bundle.js"></script><script defer src="storeData.bundle.js"></script><script defer src="formSubmit.bundle.js"></script></head>
 <body>
     <div class="content">
         <div class="heading">
@@ -16,7 +16,7 @@
             <div>Important tasks</div>
             <button class="add">Add task</button>
             <dialog data-modal>
-                <form action="" method="post">
+                <form action="" method="post" id="task-form">
                     <ul>
                         <li>
                             <label for="title">Title:</label>
@@ -42,7 +42,7 @@
                             <label for="notes">Notes:</label>
                             <textarea name="notes" id="notes" cols="30" rows="10"></textarea>
                         </li>
-                        <li><button type="submit" formmethod="dialog">Add</button></li>
+                        <li><button type="submit" formmethod="dialog" class="submit">Add</button></li>
                     </ul>
                 </form>
             </dialog>

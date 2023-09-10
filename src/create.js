@@ -9,6 +9,7 @@ export default function createTask(title, desc, due, priority, notes='', project
         done: false,
         project,
         getIndex: () => {
+            console.log(tasks);
             const index = tasks.indexOf(this);
             return index;
         }

@@ -7,6 +7,8 @@ module.exports = {
         index: './src/index.js',
         modal: './src/modal.js',
         create: './src/create.js',
+        storeData: './src/storeData.js',
+        formSubmit: './src/formSubmit.js',
     },
     devtool: 'inline-source-map',
     plugins: [

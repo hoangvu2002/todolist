@@ -1,7 +1,7 @@
 import { tasks } from "./index";
-export default function storeDate() {
+export default function storeData() {
     localStorage.clear();
-    for (task of tasks) {
+    for (const task of tasks) {
         const index = task.getIndex();
         localStorage.setItem(index, JSON.stringify(task));
     }
