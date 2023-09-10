@@ -9,6 +9,7 @@ module.exports = {
         create: './src/create.js',
         storeData: './src/storeData.js',
         formSubmit: './src/formSubmit.js',
+        deleteTask: './src/deleteTask.js',
     },
     devtool: 'inline-source-map',
     plugins: [
