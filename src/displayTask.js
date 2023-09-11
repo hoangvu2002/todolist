@@ -1,6 +1,7 @@
 import { tasks } from "./index";
 import getIndex from "./getIndex";
 import deleteTask from "./deleteTask";
+import storeData from "./storeData";
 
 export default function displayTask() {
     const taskDisplay = document.querySelector('.task-display');
@@ -14,6 +15,7 @@ export default function displayTask() {
         const taskDue = document.createElement('p');
         const taskNotes = document.createElement('p');
         const deleteButton = document.createElement('button');
+        const checkList = document.createElement('input');
         
         //
         taskDiv.appendChild(taskTitle);
@@ -21,6 +23,7 @@ export default function displayTask() {
         taskDiv.appendChild(taskDue);
         taskDiv.appendChild(taskNotes);
         taskDiv.appendChild(deleteButton);
+        taskDiv.appendChild(checkList);
         taskDiv.classList.add('task-div');
         taskTitle.classList.add('task-title');
         taskDescription.classList.add('task-desc');
@@ -38,6 +41,21 @@ export default function displayTask() {
         deleteButton.addEventListener('click', () => {
             deleteTask(index);
             taskDisplay.removeChild(taskDiv);
+        })
+        checkList.type = 'checkbox';
+        if (task.done) {
+            checkList.checked = true;
+        } else {
+            checkList.checked = false;
+        }
+        checkList.addEventListener('change', () => {
+            if (checkList.checked) {
+                task.done = true;
+                storeData();
+            } else {
+                task.done = false;
+                storeData();
+            }
         })
     }
 }
