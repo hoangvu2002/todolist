@@ -1,0 +1,10 @@
+okay so now I will need a project feature
+how can I do that, 
+I can add project form control input to the form
+add event click event or form submit something like that 
+to display all the projects (if it has one) when we reload the page
+for all the project name div, attach event handler for displaying task 
+with the project name.
+
+
+Add another checklist feature for taskDiv

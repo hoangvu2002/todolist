@@ -13,12 +13,54 @@
     font-size: 30px;
 }
 
-p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem;
 }
 
 body {
     height: 100vh;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 1em;
+}
+
+.nav-bar div {
+    align-self: stretch;
+    transition: 0.2s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nav-bar div:hover {
+    scale: 1.2;
+    background-color: aliceblue;
+}
+
+.nav-bar button {
+    padding: 5px 10px;
+    border-radius: 15%;
+    box-sizing: border-box;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-bar button:hover {
+    scale: 1.2;
+    background-color: aliceblue;
+    font-weight: bold;
 }
 
 .content {
@@ -38,10 +80,19 @@ body {
 }
 
 .task-display {
+    padding: 10px;
     grid-column: 2 / 3;
-    background-color: aqua;
+    background-color: rgb(241, 241, 220);
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    overflow-y: auto;
+    overflow-wrap: normal;
+    z-index: 1;
+}
+
+.task-notes {
+    overflow-wrap: normal;
 }
 
 .footer {
@@ -50,7 +101,19 @@ body {
     color: white;
 }
 
-.task-div > * {
-    font-family: 'Just Another Hand';
+.task-div {
+    border-radius: 5%;
+    padding: 10px;
     background-color: aliceblue;
+}
+
+.task-div button {
+    padding: 5px 10px;
+    border-radius: 15%;
+    box-sizing: border-box;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: red;
+    color: white;
 }
