@@ -6,7 +6,7 @@ import storeData from "./storeData";
 import displayTask from "./displayTask";
 
 // Function to load tasks from local storage
-function loadTasksFromLocalStorage() {
+export function loadTasksFromLocalStorage() {
     const storedTasks = JSON.parse(localStorage.getItem('tasks'));
 
     if (storedTasks) {

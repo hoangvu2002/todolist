@@ -1,13 +1,23 @@
-import { tasks } from "./index";
-import getIndex from "./getIndex";
-import deleteTask from "./deleteTask";
+import { format } from 'date-fns';
+import { tasks } from './index';
+import deleteTask from './deleteTask';
+import { displayColor } from './displayTask';
+import { loadTasksFromLocalStorage } from './formSubmit';
+import getIndex from './getIndex';
 
-export default function displayTask() {
+export default function getToday() {
+    loadTasksFromLocalStorage(); //Have to load the tasks array
     const taskDisplay = document.querySelector('.task-display');
     while (taskDisplay.firstChild) {
         taskDisplay.removeChild(taskDisplay.firstChild);
-    }
+    };
     for (const task of tasks) {
+        //This if statement is for checking whether the due date of the task is today
+        if (!isToday(task.due)) {
+            console.log("continue");
+            continue;
+        }
+        
         const taskDiv = document.createElement('div');
         const taskTitle = document.createElement('p');
         const taskDescription = document.createElement('p');
@@ -36,19 +46,18 @@ export default function displayTask() {
     }
 }
 
-export function displayColor(task) {
-    //I'm gonna put some logic in here to display color depending on the priority
-    //I will revise on my knowledge about solid design principle
-    //I will also research how to store object methods using JSON
-    switch (task.priority) {
-        case 'non-urgent':
-            return 'rgb(41, 206, 91)';
-            break;
-        case 'urgent':
-            return 'rgb(228, 224, 21)';
-            break;
-        case 'important':
-            return 'rgb(228, 21, 21)';
-            break;
+export function isToday(dueDate) {
+    const today = new Date();
+    const formattedDate = format(today, 'yyyy-MM-dd');
+    if (dueDate===formattedDate) {
+        return true;
+    } else {
+        return false;
     }
 }
+
+//Attach the click event listener for the today div
+const todayDiv = document.querySelector('.today');
+todayDiv.addEventListener('click', () => {
+    getToday();
+})

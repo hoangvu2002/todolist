@@ -12,6 +12,7 @@ module.exports = {
         deleteTask: './src/deleteTask.js',
         displayTask: './src/displayTask.js',
         deleteTask: './src/deleteTask.js',
+        getToday: './src/getToday.js',
     },
     devtool: 'inline-source-map',
     plugins: [
