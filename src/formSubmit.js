@@ -4,6 +4,8 @@ import create from "./create";
 import { tasks } from "./index";
 import storeData from "./storeData";
 import displayTask from "./displayTask";
+import { projectDisplay, projectDivDisplay } from "./projectDisplay";
+import { projectList } from "./projectDisplay";
 
 // Function to load tasks from local storage
 export function loadTasksFromLocalStorage() {
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load tasks from local storage when the page loads
     loadTasksFromLocalStorage();
+    projectDisplay();
 
     const form = document.getElementById('task-form');
 
@@ -39,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tasks.push(task); 
         storeData();
         displayTask(); //Display the projects
+        projectDisplay();
     });
 });
 
