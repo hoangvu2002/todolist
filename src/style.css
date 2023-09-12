@@ -176,3 +176,17 @@ input[type="checkbox"] {
     border: 1px solid black;
     border-radius: 10%;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Apply the font to your CSS selector */
+
+.task-div span {
+    background-color: black;
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    top: -10px;
+    left: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+}
