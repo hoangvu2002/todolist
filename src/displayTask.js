@@ -85,3 +85,8 @@ export function displayColor(task) {
             break;
     }
 }
+
+const allTask = document.querySelector('.all');
+allTask.addEventListener('click', () => {
+    displayTask();
+})
