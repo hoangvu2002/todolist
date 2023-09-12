@@ -69,7 +69,9 @@ export default function getToday() {
                 storeData();
             }
         })
-    }
+    };
+    loadTasksFromLocalStorage(); // debug
+    projectDisplay(); //debug
 }
 
 export function isToday(dueDate) {

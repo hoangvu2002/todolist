@@ -3,6 +3,7 @@ export const projectList = [];
 
 export function projectDisplay() {
     //const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+    const projectList = []; //debug
     console.log('fire');
 
     tasks.forEach((task) => {
@@ -16,7 +17,13 @@ export function projectDisplay() {
 
 export function projectDivDisplay(projectTasks) {
     console.log(projectTasks.length);
-    if (projectTasks.length === 0 ) return;
+    if (projectTasks.length === 0 ) {
+        const projectDisplay = document.querySelector('.project-display');
+        while (projectDisplay.firstChild) {
+            projectDisplay.removeChild(projectDisplay.firstChild);
+        };
+        return;
+    }
     const projectDisplay = document.querySelector('.project-display');
     while (projectDisplay.firstChild) {
         projectDisplay.removeChild(projectDisplay.firstChild);

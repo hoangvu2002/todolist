@@ -2,6 +2,9 @@ import { tasks } from "./index";
 import getIndex from "./getIndex";
 import deleteTask from "./deleteTask";
 import storeData from "./storeData";
+import { projectDisplay, projectDivDisplay } from "./projectDisplay";
+import { loadTasksFromLocalStorage } from "./formSubmit";
+import { projectList } from "./projectDisplay";
 
 export default function displayTask() {
     const taskDisplay = document.querySelector('.task-display');
@@ -44,6 +47,7 @@ export default function displayTask() {
         deleteButton.addEventListener('click', () => {
             deleteTask(index);
             taskDisplay.removeChild(taskDiv);
+            
         })
         checkList.type = 'checkbox';
         if (task.done) {
@@ -60,7 +64,9 @@ export default function displayTask() {
                 storeData();
             }
         })
-    }
+    };
+    loadTasksFromLocalStorage(); // debug
+    projectDisplay(); //debug
 }
 
 export function displayColor(task) {
