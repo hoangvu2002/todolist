@@ -16,6 +16,7 @@ export default function displayTask() {
         const taskNotes = document.createElement('p');
         const deleteButton = document.createElement('button');
         const checkList = document.createElement('input');
+        const taskProject = document.createElement('span');
         
         //
         taskDiv.appendChild(taskTitle);
@@ -24,6 +25,7 @@ export default function displayTask() {
         taskDiv.appendChild(taskNotes);
         taskDiv.appendChild(deleteButton);
         taskDiv.appendChild(checkList);
+        taskDiv.appendChild(taskProject);
         taskDiv.classList.add('task-div');
         taskTitle.classList.add('task-title');
         taskDescription.classList.add('task-desc');
@@ -34,6 +36,7 @@ export default function displayTask() {
         taskDescription.textContent = task.desc ? task.desc : 'No description';
         taskDue.textContent = task.due ? task.due : 'No due date';
         taskNotes.textContent = task.notes ? task.notes : 'No notes';
+        taskProject.textContent = task.project ? `Project: ${task.project}` : '';
         taskDisplay.appendChild(taskDiv);
         taskTitle.style.color = displayColor(task);
         const index = getIndex(task, tasks);

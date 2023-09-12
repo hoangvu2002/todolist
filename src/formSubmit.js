@@ -32,9 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const dueDate = document.getElementById('due-date').value;
         const priority = document.getElementById('priority').value;
         const notes = document.getElementById('notes').value;
+        const project = document.getElementById('project').value;
 
         // Perform your task creation and storage logic here
-        const task = create(title, description, dueDate, priority, notes);
+        const task = create(title, description, dueDate, priority, notes, project);
         tasks.push(task); 
         storeData();
         displayTask(); //Display the projects
@@ -47,12 +48,14 @@ function cleanInput() {
     const dueDate = document.getElementById('due-date');
     const priority = document.getElementById('priority');
     const notes = document.getElementById('notes');
+    const project = document.getElementById('project');
 
     title.value = '';
     description.value = '';
     dueDate.value = '';
     priority.value = 'non-urgent';
     notes.value = '';
+    project.value = '';
 }
 
 const submitButton = document.querySelector('.delete-button');
