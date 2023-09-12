@@ -4,6 +4,8 @@ import deleteTask from './deleteTask';
 import { displayColor } from './displayTask';
 import { loadTasksFromLocalStorage } from './formSubmit';
 import getIndex from './getIndex';
+import { projectDisplay, projectDivDisplay } from './projectDisplay';
+import storeData from './storeData';
 
 export default function getToday() {
     loadTasksFromLocalStorage(); //Have to load the tasks array
@@ -51,7 +53,13 @@ export default function getToday() {
         const index = getIndex(task, tasks);
         deleteButton.textContent = 'Delete';
         deleteButton.addEventListener('click', () => {
-            deleteTask(index);
+            //deleteTodayTask(index);
+            //debug
+            tasks.splice(index, 1);
+            storeData();
+            taskDisplay.removeChild(taskDiv);
+            projectDisplay();
+            //
             taskDisplay.removeChild(taskDiv);
         })
         checkList.type = 'checkbox';
@@ -72,6 +80,14 @@ export default function getToday() {
     };
     loadTasksFromLocalStorage(); // debug
     projectDisplay(); //debug
+}
+
+function deleteTodayTask(index) {
+    tasks.splice(index, 1); // Remove the task at the specified index
+    storeData(); // Update local storage
+    getToday(); // Update the display
+    //loadTasksFromLocalStorage(); // Get the most updated tasks again
+    //projectDisplay(); // Update the projects display on the nav bar
 }
 
 export function isToday(dueDate) {
