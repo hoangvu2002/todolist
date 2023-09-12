@@ -24,7 +24,7 @@ export function projectDivDisplay(projectTasks) {
     const projectsHeading = document.createElement('h2');
     projectDisplay.appendChild(projectsHeading);
     projectsHeading.textContent = 'Projects';
-    projectsHeading.id = 'project';
+    projectsHeading.id = 'project-heading';
     for (const task of projectTasks) {
         const taskDiv = document.createElement('div');
         projectDisplay.appendChild(taskDiv);
