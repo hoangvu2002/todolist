@@ -13,6 +13,9 @@ module.exports = {
         displayTask: './src/displayTask.js',
         deleteTask: './src/deleteTask.js',
         getToday: './src/getToday.js',
+        projectDisplay: './src/projectDisplay.js',
+        getProject: './src/getProject.js',
+        getImportant: './src/getImportant.js',
     },
     devtool: 'inline-source-map',
     plugins: [
