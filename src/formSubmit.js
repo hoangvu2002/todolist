@@ -40,3 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
         displayTask(); //Display the projects
     });
 });
+
+function cleanInput() {
+    const title = document.getElementById('title');
+    const description = document.getElementById('description');
+    const dueDate = document.getElementById('due-date');
+    const priority = document.getElementById('priority');
+    const notes = document.getElementById('notes');
+
+    title.value = '';
+    description.value = '';
+    dueDate.value = '';
+    priority.value = 'non-urgent';
+    notes.value = '';
+}
+
+const submitButton = document.querySelector('.delete-button');
+submitButton.addEventListener('click', (event) => {
+    event.stopPropagation();
+    cleanInput();
+})
